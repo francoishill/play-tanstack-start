@@ -22,6 +22,8 @@ export const Route = createFileRoute("/api/stream")({
 
             // Helper to send a message with explicit flushing
             const sendMessage = (message: StreamMessage) => {
+              console.log("Sending message:", message);
+
               const jsonLine = JSON.stringify(message) + "\n";
               controller.enqueue(encoder.encode(jsonLine));
             };
