@@ -1,0 +1,63 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onWindowChange",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always"
+  },
+  "eslint.codeActionsOnSave.mode": "all",
+  "typescript.preferences.preferTypeOnlyAutoImports": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "git.autofetch": true,
+  "git.postCommitCommand": "push",
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "npm.packageManager": "pnpm",
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "node_modules/@mantine/core/styles.css"
+  ],
+  "cSpell.words": [
+    "breastmilk",
+    "chartjs",
+    "clockout",
+    "Crossmark",
+    "Eairh",
+    "Eargghh",
+    "frayol",
+    "Hoverable",
+    "Luno",
+    "payfast",
+    "rrule",
+    "Twotone",
+    "Uncategorized",
+    "Vercel",
+    "Vomitting"
+  ],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "DEV",
+    "YOLANDE",
+    "SONYA",
+    "FRAN",
+    "CHATGPT"
+  ]
+}

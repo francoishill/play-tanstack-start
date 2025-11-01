@@ -1,0 +1,37 @@
+{
+  "name": "play-tanstack-start",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "vite start"
+  },
+  "dependencies": {
+    "@mantine/core": "^8.3.6",
+    "@mantine/hooks": "^8.3.6",
+    "@mantine/notifications": "^8.3.6",
+    "@tanstack/react-query": "^5.90.5",
+    "@tanstack/react-router": "^1.133.36",
+    "@tanstack/react-router-devtools": "^1.133.36",
+    "@tanstack/react-start": "^1.134.0",
+    "minimatch": "^10.1.1",
+    "postcss": "^8.5.6",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "simple-git": "^3.29.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
