@@ -11,3 +11,11 @@ export type StreamMessage =
       type: "start";
       startTime: string;
     };
+
+export interface ReceivedMessage {
+  id: string;
+  message: string;
+  timestamp: Date;
+  type: StreamMessage["type"];
+  percentage?: number;
+}

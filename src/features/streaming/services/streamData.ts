@@ -1,4 +1,4 @@
-import { StreamMessage } from "~/types/dtos";
+import { ReceivedMessage, StreamMessage } from "~/types/dtos";
 import logDebug from "~/utils/logDebug";
 
 interface Args {
@@ -12,10 +12,17 @@ interface Args {
       totalDurationMs: number;
     } | null
   ) => void;
+  addReceivedMessage: (message: ReceivedMessage) => void;
 }
 
 export async function streamData(args: Args) {
-  const { numMessages, setStatusMessage, setPercentage, setMetadata } = args;
+  const {
+    numMessages,
+    setStatusMessage,
+    setPercentage,
+    setMetadata,
+    addReceivedMessage,
+  } = args;
 
   let startTime: string | null = null;
 
@@ -62,11 +69,24 @@ export async function streamData(args: Args) {
             if (msg.type === "start") {
               startTime = msg.startTime;
               setStatusMessage("Streamining...");
+              addReceivedMessage({
+                id: `start-${Date.now()}`,
+                message: "Stream started",
+                timestamp: new Date(),
+                type: "start",
+              });
             } else if (msg.type === "progress") {
               setStatusMessage(msg.message);
               if (msg.percentage !== undefined) {
                 setPercentage(msg.percentage);
               }
+              addReceivedMessage({
+                id: `progress-${Date.now()}-${Math.random()}`,
+                message: msg.message,
+                timestamp: new Date(),
+                type: "progress",
+                percentage: msg.percentage,
+              });
             } else if (msg.type === "complete") {
               const endTime = new Date();
               if (startTime) {
@@ -78,6 +98,12 @@ export async function streamData(args: Args) {
                 });
               }
               setStatusMessage("Stream complete!");
+              addReceivedMessage({
+                id: `complete-${Date.now()}`,
+                message: "Stream completed",
+                timestamp: new Date(),
+                type: "complete",
+              });
               break;
             }
           } catch (parseError) {
